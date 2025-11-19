@@ -9,8 +9,13 @@ export const Country = ({countryData}: Props) => {
     const countryName = countryData.country
     const flagPath = countryData.countryInfo.flag
 
+    const fullCountryInfo = () => {
+        console.log('click');
+        
+    }
+
     return (
-        <div className={styles.div}>
+        <div className={styles.div} onClick={fullCountryInfo}>
             <span className={styles.countryName}>{countryName}</span>            
             <img className={styles.img} src={flagPath}/>
         </div>
