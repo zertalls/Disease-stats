@@ -1,6 +1,6 @@
-import { Country } from "@/common/components/Country/Country";
 import { useGetCountryStatsQuery } from "@/features/disease-statistics/api/diseaseApi";
 import styles from './CountriesListExample.module.css'
+import { Country } from "@/common/components";
 
 export const CountriesListExample = () => {
   const { data: countryList } = useGetCountryStatsQuery();
