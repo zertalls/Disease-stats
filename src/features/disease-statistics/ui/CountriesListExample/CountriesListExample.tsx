@@ -1,27 +1,27 @@
+import { Country } from "@/common/components/Country/Country";
 import { useGetCountryStatsQuery } from "@/features/disease-statistics/api/diseaseApi";
+import styles from './CountriesListExample.module.css'
 
 export const CountriesListExample = () => {
-    const{data: countryList} = useGetCountryStatsQuery()   
-    
-    console.log(typeof countryList, countryList?.length);
+  const { data: countryList } = useGetCountryStatsQuery();
+  let countriesRandomList = [];   
 
-    const showRandomsCountries = () => {
-        let countriesRandomList = []
-        for (let index = 0; index < 20; index++) {
-            // const countryIndex = Math.ceil(Math.random() * countryList?.length)            
-            // console.log(countryIndex);                               
-        }        
+  const showRandomsCountries = () => {
+    if (countryList) {
+      for (let index = 0; index < 20; index++) {
+        const countryIndex = Math.ceil(Math.random() * countryList?.length);
+        countriesRandomList.push(countryList[countryIndex]);
+      }
     }
-    
-    showRandomsCountries()
 
-    console.log(countryList);    
-    
-    return (
-        <div>
-            Countries List Example            
-        </div>
-    );
+    return countriesRandomList.map(country => {
+        return (
+            <Country countryData={country}/>
+        )
+    })
+  };    
+
+  return <div className={styles.div}>
+        {showRandomsCountries()}
+  </div>;
 };
-
-

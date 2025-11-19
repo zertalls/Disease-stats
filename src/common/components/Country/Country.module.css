@@ -1,0 +1,21 @@
+.div {    
+    max-width: 350px;
+    padding: 15px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+
+    outline: 1px solid red;
+}
+
+.countryName {
+    font-size: 25px;        
+}
+
+.img {
+    width: 200px;    
+    height: 100px;
+}
+
