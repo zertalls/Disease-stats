@@ -1,8 +1,10 @@
 import { diseaseApi } from "@/features/disease-statistics/api/diseaseApi";
 import { configureStore } from "@reduxjs/toolkit";
+import { appSlice } from "./appSlice";
 
 export const store = configureStore({
   reducer: {
+    [appSlice.name]: appSlice.reducer,
     [diseaseApi.reducerPath]: diseaseApi.reducer,
   },
 

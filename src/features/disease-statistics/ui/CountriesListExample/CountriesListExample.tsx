@@ -1,9 +1,10 @@
-import { useGetCountryStatsQuery } from "@/features/disease-statistics/api/diseaseApi";
-import styles from './CountriesListExample.module.css'
 import { Country } from "@/common/components";
+import { useGetCountryStatsQuery } from "@/features/disease-statistics/api/diseaseApi";
+import styles from './CountriesListExample.module.css';
 
 export const CountriesListExample = () => {
-  const { data: countryList } = useGetCountryStatsQuery();
+  const { data: countryList} = useGetCountryStatsQuery();
+
   let countriesRandomList = [];   
 
   const showRandomsCountries = () => {
@@ -21,7 +22,7 @@ export const CountriesListExample = () => {
     })
   };    
 
-  return <div className={styles.div}>
+  return <div className={styles.div}>        
         {showRandomsCountries()}
   </div>;
 };
