@@ -10,7 +10,7 @@ export const Country = ({countryData}: Props) => {
     const flagPath = countryData.countryInfo.flag
 
     const fullCountryInfo = () => {
-        console.log('click');
+        console.log(countryData);
         
     }
 

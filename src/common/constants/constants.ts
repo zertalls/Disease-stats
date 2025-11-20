@@ -1,1 +1,1 @@
-export const continentNames = ['Asia', 'Africa', 'North America', 'South America', 'Antarctica', 'Europe', "Australia"]
+export const continentNames = ['Asia', 'Africa', 'North America', 'South America', 'Europe']
