@@ -1,11 +1,11 @@
 import { CountriesListExample } from "./CountriesListExample/CountriesListExample";
-import { SearhCountry } from "./SearchCountry/SearhCountry";
+import { GlobalSearch } from "./GlobalSearch/GlobalSearch";
 
 export const DiseaseStatistics = () => {
-    return (
-        <div>
-            <SearhCountry/>
-            <CountriesListExample/>            
-        </div>
-    );
+  return (
+    <div>
+      <GlobalSearch />
+      <CountriesListExample />
+    </div>
+  );
 };
