@@ -5,7 +5,7 @@ export type Filter = {
 }
 
 export type FilterValue = {
-    default?: 'idle'
+    default?: string 
     continentName?: string
     countryName?: string
 }

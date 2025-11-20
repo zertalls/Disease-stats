@@ -3,6 +3,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { searchCountrySchema, SearchInputs } from "@/features/disease-statistics/lib/schema/";
 import { useAppDispatch } from "@/common/hooks/useAppDispatch";
 import { setFilter } from "@/app/appSlice";
+import styles from './SearhCountry.module.css'
 
 export const SearhCountry = () => {
   const {
@@ -22,8 +23,8 @@ export const SearhCountry = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)}>
-      <input {...register("countryName")} placeholder="Наберите название страны..." />
+    <form className={styles.form} onSubmit={handleSubmit(onSubmit)}>
+      <input className={styles.input} {...register("countryName")} placeholder="Наберите название страны..." />
       <button type="submit">Найти</button>
       {errors.countryName && <span>{errors.countryName.message}</span>}
     </form>

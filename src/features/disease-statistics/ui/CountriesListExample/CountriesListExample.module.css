@@ -1,5 +1,12 @@
 .div {
+    padding: 15px;
     display: flex;
     flex-wrap: wrap;
+    gap: 55px;
 
+    outline: 2px solid rgb(89, 199, 85);
+}
+
+.header {
+    text-align: center;
 }

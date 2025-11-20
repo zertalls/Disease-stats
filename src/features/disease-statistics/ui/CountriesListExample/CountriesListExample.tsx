@@ -13,8 +13,8 @@ export const CountriesListExample = () => {
 
   const showCountries = () => {
     if (countryList) {
-      if ("continentName" in currFilter.filter) {
-        const filtered = countryList.filter(country => country.continent === currFilter.filter.continentName);
+      if ("continentName" in currFilter.filter) {        
+        const filtered =  currFilter.filter.continentName !== 'All' ? countryList.filter(country => country.continent === currFilter.filter.continentName) : countryList;
         filteredCountries = filtered;
       } else if ("countryName" in currFilter.filter) {
         const findCountry = countryList.find(country => country.country === currFilter.filter.countryName);
@@ -32,5 +32,10 @@ export const CountriesListExample = () => {
     });
   };
 
-  return <div className={styles.div}>{showCountries()}</div>;
+  return (
+    <div className={styles.div}>
+      <h2 className={styles.header}>Список стран</h2>      
+      {showCountries()}
+    </div>
+  );
 };
