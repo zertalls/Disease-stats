@@ -1,13 +1,21 @@
+import { paths } from "@/common/constants";
 import { useGetCountryStatsQuery } from "@/features/disease-statistics/api/diseaseApi";
 import { CovidCountryDataResponce } from "@/features/disease-statistics/api/diseaseApi.types";
-import { useParams } from "react-router";
+import { useNavigate, useParams } from "react-router";
 import styles from "./CountryInfo.module.css";
 
 export const CountryInfo = () => {
   const { data: countryList } = useGetCountryStatsQuery();
   const { countryName } = useParams();
+  const navigate = useNavigate();
 
   const countryInfo: CovidCountryDataResponce = countryList?.find(country => country.country === countryName);
+
+  console.log(countryInfo);  
+
+  if (!countryInfo) {         
+    return navigate(paths.wrongPath)   
+  }
 
   return (
     <div className={styles.conatiner}>
@@ -44,36 +52,3 @@ export const CountryInfo = () => {
     </div>
   );
 };
-
-// {
-//     "updated": 1763667353721,
-//     "country": "Central African Republic",
-//     "countryInfo": {
-//         "_id": 140,
-//         "iso2": "CF",
-//         "iso3": "CAF",
-//         "lat": 7,
-//         "long": 21,
-//         "flag": "https://disease.sh/assets/img/flags/cf.png"
-//     },
-//     "cases": 15440,
-//     "todayCases": 0,
-//     "deaths": 113,
-//     "todayDeaths": 0,
-//     "recovered": 15200,
-//     "todayRecovered": 0,
-//     "active": 127,
-//     "critical": 2,
-//     "casesPerOneMillion": 3078,
-//     "deathsPerOneMillion": 23,
-//     "tests": 81294,
-//     "testsPerOneMillion": 16205,
-//     "population": 5016678,
-//     "continent": "Africa",
-//     "oneCasePerPeople": 325,
-//     "oneDeathPerPeople": 44395,
-//     "oneTestPerPeople": 62,
-//     "activePerOneMillion": 25.32,
-//     "recoveredPerOneMillion": 3029.89,
-//     "criticalPerOneMillion": 0.4
-// },

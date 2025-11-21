@@ -9,9 +9,10 @@ export const diseaseApi = baseUrl.injectEndpoints({
                     method: 'get',
                     url: '/v3/covid-19/countries'
                 }
-            }
+            },                       
         })
-    })
+    }),
+    
 })
 
 export const {useGetCountryStatsQuery } = diseaseApi

@@ -7,9 +7,7 @@ export const baseUrl = createApi({
     baseQuery: async (args, api, extraOptions) => {
         const result = await fetchBaseQuery({
             baseUrl: 'https://disease.sh'
-        })(args, api, extraOptions)
-
-        console.log('result', result);
+        })(args, api, extraOptions) 
         
 
         if (result.error) {
