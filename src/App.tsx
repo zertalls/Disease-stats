@@ -6,7 +6,7 @@ function App() {
   return (
     <div>
       <Routing/>
-      {/* <Main/>      */}
+      
     </div>
   )
 }

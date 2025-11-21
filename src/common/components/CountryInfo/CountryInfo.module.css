@@ -1,7 +1,8 @@
 .conatiner {
     margin: 0 300px;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
+    gap: 500px
 }
 
 span {

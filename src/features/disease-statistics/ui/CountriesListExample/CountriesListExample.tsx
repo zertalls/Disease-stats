@@ -6,8 +6,11 @@ import { selectFilter } from "@/app/appSlice";
 import { CovidCountryDataResponce } from "../../api/diseaseApi.types";
 
 export const CountriesListExample = () => {
-  const { data: countryList } = useGetCountryStatsQuery();
+  const { data: countryList, isLoading } = useGetCountryStatsQuery();
   const currFilter = useAppSelector(selectFilter);
+  
+  console.log(isLoading);
+  
 
   let filteredCountries: CovidCountryDataResponce[] = [];
 
