@@ -1,0 +1,25 @@
+.conatiner {
+    margin: 0 300px;
+    display: flex;
+    justify-content: space-between;
+}
+
+span {
+    font-size: 25px;
+    margin: 10px;
+}
+
+.mainInfo {
+    display: flex;
+    flex-direction: column;
+}
+
+.img {
+    width: 300px;
+    height: 200px;
+}
+
+.secondaryInfo {
+    display: flex;
+    flex-direction: column;
+}
